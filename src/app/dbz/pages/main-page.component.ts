@@ -21,4 +21,8 @@ export class MainPageComponent {
             power: 7500
         }
     ]
+
+    onNewCharater(character: Character): void {
+        console.log("character en main page", character)
+    }
 }
