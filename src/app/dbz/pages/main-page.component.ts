@@ -23,6 +23,12 @@ export class MainPageComponent {
     ]
 
     onNewCharater(character: Character): void {
-        console.log("character en main page", character)
+        this.characters.push(character)
     }
+
+    onDeleteCharacter(index: number): void {
+        console.log("index desde main-page")
+        this.characters.splice(index, 1)
+    }
+
 }
