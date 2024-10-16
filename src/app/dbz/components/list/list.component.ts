@@ -11,11 +11,11 @@ export class ListComponent {
     public characterList: Character[] = []
 
     @Output()
-    public onDeleteId: EventEmitter<number> = new EventEmitter()
+    public onDeleteId: EventEmitter<string> = new EventEmitter()
 
-    onDeleteCharacter(index: number): void {
-        console.log("index en listcomponent", index)
+    onDeleteCharacter(id: string): void {
+        console.log("id en listcomponent", id)
         // emitir el id del personaje
-        this.onDeleteId.emit(index)
+        this.onDeleteId.emit(id)
     }
 }
