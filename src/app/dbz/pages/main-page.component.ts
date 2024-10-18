@@ -9,7 +9,18 @@ import { DbzService } from '../services/dbz.service';
 
 export class MainPageComponent {
     // inyeccion de dependencias, habilitara en este archivo toda la informacion que esta siendo utilizada en este servicio
-    constructor(public dbzService: DbzService) {
+    constructor(private dbzService: DbzService) { }
+
+    get characters(): Character[] {
+        return [...this.dbzService.characters]
+    }
+
+    onDeleteId(index: string): void {
+        this.dbzService.deletedCharacterById(index)
+    }
+
+    onNewCharacter(character: Character): void {
+        this.dbzService.addCharacter(character)
     }
 
 }
